@@ -1,0 +1,17 @@
+if __name__ == '__main__':
+    score_list=[]
+    for numlist in range(int(input())):
+        name = input()
+        score = float(input())
+        score_list.append([name,score])
+    sorted_by_second = sorted(score_list, key=lambda x: x[1])
+    name_of_same_scores=[]
+    for score in sorted_by_second:
+        if score[1]!=sorted_by_second[0][1]:
+            second_lowest_grad=score[1]
+            break
+    for scores in sorted_by_second:
+        if scores[1]==second_lowest_grad:
+            name_of_same_scores.append(scores[0])
+    for names in sorted(name_of_same_scores):
+        print(names)
